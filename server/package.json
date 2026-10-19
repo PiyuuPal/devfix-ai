@@ -1,0 +1,48 @@
+{
+  "name": "devfix-server",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build",
+    "smoke": "tsx scripts/smoke.ts",
+    "test": "node --import tsx --test 'test/*.test.ts'"
+  },
+  "description": "Backend for DevFix AI: POST /analyze → Claude, OpenAI or OpenRouter → structured fix",
+  "license": "MIT",
+  "keywords": [
+    "react-native",
+    "expo",
+    "error",
+    "debug",
+    "ai",
+    "claude",
+    "openai",
+    "devtools",
+    "server"
+  ],
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.134.0",
+    "express": "^5.3.0",
+    "openai": "^7.34.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "bin": {
+    "devfix-server": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ]
+}

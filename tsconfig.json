@@ -8,6 +8,9 @@
       ],
       "@/assets/*": [
         "./assets/*"
+      ],
+      "devfix-react-native": [
+        "./packages/devfix-react-native/src"
       ]
     }
   },
@@ -16,5 +19,6 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+  ],
+  "exclude": ["node_modules", "server", "packages/*/test", "packages/*/lib"]
 }
